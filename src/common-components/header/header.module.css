@@ -1,0 +1,38 @@
+.container {
+    width: 100%;
+    height: 110px;
+    background-color: #1e2c37;
+    padding: 0 2%;
+}
+
+.logo {
+    margin-top: 6px;
+}
+
+.date {
+    margin-left: 2%;
+}
+
+.date__date {
+    color: #f6fcfd;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.date__time {
+    color: #f6fcfd;
+    font-size: 18px;
+}
+
+.date__eastern {
+    color: #ffffff;
+    margin-top: 3px;
+}
+
+.eastern__time {
+    color: #e1d5b4;
+}
+
+.searchContainer {
+    margin-left: 25%;
+}
