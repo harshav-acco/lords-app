@@ -1,0 +1,11 @@
+.subHeaderContainer {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    border: 1px solid grey;
+}
+
+.subHeader_GameLinks {
+    text-transform: uppercase;
+}
+

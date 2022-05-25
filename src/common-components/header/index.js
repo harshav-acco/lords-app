@@ -1,5 +1,7 @@
 import HeaderDate from "./components/date";
 import SearchComp from "./components/search";
+import LoginDetails from "./components/loginDetails";
+import AccountInfo from "./components/accountInfo";
 
 import Styles from "./header.module.css";
 // common styles
@@ -13,6 +15,9 @@ const Header = () => {
             </div>
             <HeaderDate />
             <SearchComp />
+            <LoginDetails />
+            <AccountInfo />
+            <AccountInfo forAccount={"logout"}/>
         </div>
     )
 };

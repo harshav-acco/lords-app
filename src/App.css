@@ -16,15 +16,100 @@
   align-items: center;
 }
 
+.textCenter {
+  text-align: center;
+}
+
 .flexRow {
   display: flex;
   flex-direction: row;
+}
+
+.jSpaceAround {
+  justify-content: space-around;
+}
+
+.jCenter {
+  justify-content: center;
+}
+
+.jSpaceBetween {
+  justify-content: space-between;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
 }
 
 .leftSpace {
   margin-left: 2%;
 }
 
+.extraLeftSpace {
+  margin-left: 3%;
+}
+
+.topSpace {
+  margin-top: 3px;
+}
+
 .noWrap {
   white-space: nowrap;
+}
+
+.standardFontSize {
+  font-size: 14px;
+}
+
+.largeFont {
+  font-size: 18px;
+}
+
+.vLargeFont {
+  font-size: 32px;
+}
+
+.goldFont {
+  color: #e1d5b4;
+}
+
+.purpleFont {
+  color: purple;
+}
+
+.whiteFont {
+  color: #ffffff;
+}
+
+.absolutePosition {
+  position: absolute;
+}
+
+.vAlignTop {
+  vertical-align: top;
+}
+
+.cPointer {
+  cursor: pointer;
+}
+
+.textSemiBold {
+  font-weight: 600;
+}
+
+.textBold {
+  font-weight:bolder;
+}
+
+.textCapitalize {
+  text-transform: capitalize;
 }

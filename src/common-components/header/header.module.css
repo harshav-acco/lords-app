@@ -13,10 +13,14 @@
     margin-left: 2%;
 }
 
-.date__date {
+.date__date, .loginDetails__name {
     color: #f6fcfd;
     font-size: 14px;
-    margin-top: 3px;
+}
+
+.loginDetails__lastLogIn {
+    color: #f6fcfd;
+    font-size: 12px;
 }
 
 .date__time {

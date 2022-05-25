@@ -1,0 +1,131 @@
+.mainContainer {
+    width: 100%;
+    padding: 0px 2%;
+    height: calc(100% - 160px);
+    background-image: url('../../assets/bg.png');
+    background-repeat: repeat;
+    background-size: 400px;
+}
+
+.main__favorites {
+    width: 15%;
+    overflow: scroll;
+}
+
+.main__main {
+    width: 70%;
+    overflow: scroll;
+}
+
+.main__action {
+    width: 25%;
+}
+
+.favorite {
+    border: 1px solid grey;
+    border-top: unset;
+}
+
+.favorite__heading {
+    border-bottom: 1px solid grey;
+    padding: 4px;
+}
+
+.favorite__body {
+    padding: 4px;
+}
+
+.favorite__bodyItem {
+    padding: 8px 4px;
+}
+
+.action__credit {
+    background-color: #d5bb32;
+    padding: 8px 4px;
+    border-radius: 4px;
+}
+
+.mainContent {
+    width: 96%;
+    padding: 8px 2%;
+}
+
+.mainContent__heading {
+    width: 60%;
+}
+
+.mainContent__Side {
+    width: 20%;
+}
+
+.mainContent__body {
+    border: 1px solid grey;
+}
+
+.mainContent_game {
+    border-bottom: 1px solid grey;
+    padding: 14px;
+    font-size: 16px;
+}
+
+.gameDetails_heading {
+    border-bottom: 2px solid grey;
+}
+
+.gameDetails_date {
+    align-self: flex-end;
+}
+
+.gameDetails__container {
+    border: 0.5px solid grey;
+    border-radius: 4px;
+}
+
+.gameDetails__secondContainer {
+    border: 0.5px solid grey;
+    border-top: unset;
+    border-radius: 4px;
+}
+
+.gameDetails__name {
+    width: 44%;
+    padding: 10px 0px;
+}
+
+.gameDetails__back {
+    width: 28%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.gameDetails__backNumber {
+    width: 28%;
+    display: flex;
+    flex-direction: row;
+}
+
+.gameDetails__lay {
+    width: 28%;
+}
+
+.gameDetails_cell {
+    padding: 10px;
+    width: 33.3%;
+    border-left: 0.5px solid grey;
+}
+
+.gameDetails_lightBlue {
+    background-color: #c5dfe9;
+}
+
+.gameDetails_blue {
+    background-color: skyblue;
+}
+
+.gameDetails_lightPink {
+    background-color: #d6cdcf;
+}
+
+.gameDetails_pink {
+    background-color: pink;
+}

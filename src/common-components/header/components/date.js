@@ -5,7 +5,7 @@ import { getDate, getTime } from '../../../utils';
 const HeaderDate = () => {
     return (
         <div className={`flexRow leftSpace ${Styles.date}`}>
-            <div className={`noWrap ${Styles.date__date}`}>{getDate()}</div>
+            <div className={`noWrap topSpace ${Styles.date__date}`}>{getDate()}</div>
             <div className={`leftSpace ${Styles.date__time}`}>{getTime()}</div>
             <div className={`leftSpace flexRow ${Styles.date__eastern}`}>
                 (&nbsp;

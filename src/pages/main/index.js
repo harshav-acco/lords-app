@@ -1,16 +1,18 @@
 import Header from "../../common-components/header";
+import SubHeader from "../../common-components/subHeader";
+import Main from "../../components/main";
 
-import Styles from "./main.module.css";
 import "../../App.css";
 
-const Main = () => {
+const FirstPage = () => {
     
     return (
-        <div>
+        <div style={{ height: '100%' }}>
             <Header />
-            <div>Main Page</div>
+            <SubHeader />
+            <Main />
         </div>
     )
 };
 
-export default Main;
+export default FirstPage;
