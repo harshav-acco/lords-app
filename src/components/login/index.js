@@ -1,13 +1,37 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 import InputField from '../../common-components/inputField';
 import Toaster from '../../common-components/toaster';
 import CustomButton from '../../common-components/button';
+import NavigationLink from "../../common-components/navigationLink";
+
+import { useAuth } from '../../contexts/AuthContext';
 
 const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const { login } = useAuth();
+    const navigateTo = useNavigate();
+
+    async function handleLogin(e) {
+        e.preventDefault();
+        setError("");
+
+        if (!email || !password) {
+            setError("Please enter email and password");
+            return;
+        }
+
+        try {
+            await login(email, password);
+            navigateTo("/main");
+        } catch (e) {
+            console.log(e);
+            setError("failed to login");
+        }
+    }
 
     return (
         <>
@@ -28,7 +52,11 @@ const Login = (props) => {
             <CustomButton 
                 disable={false}
                 text={'Login'}
-                handleClick={() => setError("Something is error")}
+                handleClick={handleLogin}
+            />
+            <NavigationLink 
+                text="Register"
+                navigateTo="/signup"
             />
             {
                 error ? 

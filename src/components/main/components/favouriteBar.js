@@ -5,7 +5,7 @@ import SportsCricketIcon from '@mui/icons-material/SportsCricket';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import Styles from "../main.module.css";
-import { CricketData, FootBallData, TennisData } from './tempData';
+import Toaster from '../../../common-components/toaster';
 
 const GAMES = ['cricket', 'football', 'tennis'];
 
@@ -49,14 +49,9 @@ const FavouriteBar = (props) => {
     const [matches, setMatches] = useState([]);
     const [hoverMatch, setHoverMatch] = useState('');
     const [typeGame, setTypeGame] = useState('cricket');
+    const [error, setError] = useState("");
 
-    const setDefaultMatches = () => {
-        let data = CricketData;
-        if (typeGame === GAMES[1]) {
-            data = FootBallData
-        } else if (typeGame === GAMES[2]) {
-            data = TennisData;
-        }
+    const setDefaultMatches = (data) => {
         setMatches(data);
         props.setGameMatches(data);
         props.setMatch({});
@@ -64,14 +59,19 @@ const FavouriteBar = (props) => {
 
     useEffect(() => {
         const fetchMatches = async () => {
+            setError("");
+
             try {
-                const { body, status } = await fetch("http://localhost:3000/"+typeGame);
-                // const data = await response.json();
-                console.log(body);
-                if (status !== 200) setDefaultMatches();
-                // setMatches(response);
+                // const { body, status } = await fetch("http://localhost:3000/"+typeGame);
+                const response = await fetch("http://localhost:3000/api/"+typeGame);
+                const data = await response.json();
+
+                if (!data.data) {
+                    setError(data.status_code);
+                }
+                setDefaultMatches(data?.data || []);
             } catch (e) {
-                setDefaultMatches();
+                setError("Not able to fetch data");
             }
         }
 
@@ -112,6 +112,7 @@ const FavouriteBar = (props) => {
                             className='w100 cPointer'
                             onMouseEnter={() => setHoverMatch(match.gameId)}
                             onMouseLeave={() => setHoverMatch("")}
+                            key={match.gameId}
                         >
                             <Game 
                                 key={match.gameId}
@@ -125,6 +126,13 @@ const FavouriteBar = (props) => {
                     ))
                 }
             </div>
+            {
+                error ? 
+                <Toaster 
+                    statement={error}
+                    handleClose={() => setError("")}
+                /> : null
+            }
         </div>
     )
 };

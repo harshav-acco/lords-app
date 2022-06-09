@@ -3,7 +3,7 @@ import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import DisplaySettingsOutlinedIcon from '@mui/icons-material/DisplaySettingsOutlined';
 
-import { CricketBetData } from './tempData';
+// import { CricketBetData } from './tempData';
 import Styles from "../main.module.css";
 import { changeFormat } from "../../../utils";
 
@@ -11,14 +11,14 @@ const GameDetails = ({ game, gameName }) => {
     const [betDetails, setBetDetails] = useState({});
 
     useEffect(() => {
-        console.log(game, gameName);
         const fetchGameDetails = async () => {
             try {
                 const response = 
-                    await fetch("http://34.93.64.47:3000/api/ods/"+gameName+"?gameid="+game.gameId);
-                console.log(response);
+                    await fetch("http://localhost:3000/api/"+gameName+"/"+game.gameId);
+                const data = await response?.json();
+                setBetDetails(data);
+                // console.log(data);
             } catch (e) {
-                setBetDetails(CricketBetData());
                 console.log(e);
             }
         }
@@ -41,13 +41,13 @@ const GameDetails = ({ game, gameName }) => {
                 <div 
                     className={`textSemiBold jCenter ${Styles.mainContent__Side} ${Styles.gameDetails_date}`}
                 >
-                    {changeFormat(game.stime, "d/mm/yyyy hh:mm")}
+                    {game.stime}
                 </div>
             </div>
             <div className="topSpace flexRow">
                 <WatchLaterOutlinedIcon style={{ color: '#e1d5b4' }} />
                 <span className='extraLeftSpace goldFont textBold largeFont'>
-                    Opens in 7hrs 15 mins
+                    {betDetails?.match_odds?.inPlay ? "Opens in 7hrs 15 mins" : "Match is yet to start"}
                 </span>
             </div>
             <div className="topSpace flexRow w100">
