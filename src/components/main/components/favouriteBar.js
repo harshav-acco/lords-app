@@ -65,7 +65,7 @@ const FavouriteBar = (props) => {
     useEffect(() => {
         const fetchMatches = async () => {
             try {
-                const { body, status } = await fetch("http://34.93.64.47:3000/api/list/"+typeGame);
+                const { body, status } = await fetch("http://localhost:3000/"+typeGame);
                 // const data = await response.json();
                 console.log(body);
                 if (status !== 200) setDefaultMatches();
