@@ -14,7 +14,7 @@ const GameDetails = ({ game, gameName }) => {
         const fetchGameDetails = async () => {
             try {
                 const response = 
-                    await fetch("http://localhost:3000/api/"+gameName+"/"+game.gameId);
+                    await fetch("http://3.108.193.226:3000/api/"+gameName+"/"+game.gameId);
                 const data = await response?.json();
                 setBetDetails(data);
                 // console.log(data);
