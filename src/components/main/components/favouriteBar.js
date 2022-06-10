@@ -63,7 +63,7 @@ const FavouriteBar = (props) => {
 
             try {
                 // const { body, status } = await fetch("http://localhost:3000/"+typeGame);
-                const response = await fetch("http://localhost:3000/api/"+typeGame);
+                const response = await fetch("http://3.108.193.226:3000/api/"+typeGame);
                 const data = await response.json();
 
                 if (!data.data) {
